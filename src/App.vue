@@ -1,31 +1,73 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<transition name="fade"
+		            mode="out-in">
+			<!-- 此处注释掉的话主页出不来，说明此处用来作为/请求渲染出口 -->
+			<router-view></router-view>
+		</transition>
+	</div>
 </template>
 
-<style>
+<script>
+export default {
+	name: 'app',
+	components: {
+	},
+	watch: {
+		'$route' (to, from) {
+		  console.log(this.$route)
+		}
+	}
+}
+
+</script>
+
+<style lang="scss">
+body {
+	margin: 0px;
+	padding: 0px;
+	/*background: url(assets/bg1.jpg) center !important;
+		background-size: cover;*/
+	// background: #1F2D3D;
+	font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.el-submenu [class^=fa] {
+	vertical-align: baseline;
+	margin-right: 10px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.el-menu-item [class^=fa] {
+	vertical-align: baseline;
+	margin-right: 10px;
+}
+
+.toolbar {
+	background: #f2f2f2;
+	padding: 10px;
+	//border:1px solid #dfe6ec;
+	margin: 10px 0px;
+	.el-form-item {
+		margin-bottom: 10px;
+	}
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: all .2s ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
 }
 </style>
