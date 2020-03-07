@@ -6,8 +6,9 @@ module.exports = {
   devServer: {
     proxy: {
       '/': {
-        target: 'http://localhost:8081/',
+        target: 'http://www.xahy.gov.cn/',
         changeOrigin: true,
+        disableHostCheck: true,
         ws: false,
         pathRewrite: {
           '^/': ''

@@ -4,12 +4,13 @@ import UserInfo from '@/views/UserInfo.vue'
 import Home from '@/views/Home.vue'
 import Echarts from '@/views/Echarts.vue'
 import Vonic from '@/views/Vonic.vue'
-import Drawer from "./views/Drawer";
+import Drawer from './views/Drawer'
+import CROS from './views/LoadCros.vue'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [{
     path: '/',
@@ -30,6 +31,10 @@ export default new Router({
     {
       path: '/drawer',
       component: Drawer
+    },
+    {
+      path: '/cros',
+      component: CROS
     }
     ]
   }]

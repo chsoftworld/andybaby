@@ -12,6 +12,7 @@
             <el-menu-item index="/queryUser">游客查询</el-menu-item>
             <el-menu-item index="/userHotMap">VIP查询</el-menu-item>
             <el-menu-item index="/vonic">Vonic组件</el-menu-item>
+            <el-menu-item index="/cros">CROS</el-menu-item>
           </el-submenu>
           <el-menu-item index="2">
             <i class="el-icon-menu"></i>
